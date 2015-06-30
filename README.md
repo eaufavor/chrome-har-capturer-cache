@@ -43,7 +43,7 @@ file from a list of URLs.
 
 Install globally with:
 
-    sudo npm install -g chrome-har-capturer
+    sudo npm install -g ./
 
 Load a list of URL with:
 
@@ -57,7 +57,7 @@ Load a list of URL with:
 
 Install locally with:
 
-    npm install chrome-har-capturer
+    npm install ./
 
 The following snippet loads an array of URLs serially and generate a cumulative
 HAR file, just like the Record button in the
