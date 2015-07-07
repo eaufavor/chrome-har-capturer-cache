@@ -13,7 +13,8 @@ program
     .option('-c, --content', 'also capture the requests body')
     .option('-d, --delay <ms>', 'time to wait after the load event')
     .option('-v, --verbose', 'enable verbose output on stderr')
-    .option('-r, --repeat', 'Clean connections and DNS but not cache for a repeat view')
+    .option('-r, --repeat', 'clean connections and DNS but not cache for a repeat view')
+    .option('-n, --normal', 'clean no connections no cache and no DNS')
     .parse(process.argv);
 
 if (program.args.length === 0) {
@@ -28,7 +29,8 @@ var c = chc.load(urls, {
     'port': program.port,
     'fetchContent': program.content,
     'onLoadDelay': program.delay,
-    'repeatView': program.repeat
+    'repeatView': program.repeat,
+    'normalView': program.normal
 });
 
 if (program.verbose) {
