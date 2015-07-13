@@ -42,10 +42,10 @@ c.on('pageEnd', function (url) {
     if (process.stderr.isTTY) status = status.green;
     console.error(status + ' ' + url);
 });
-c.on('pageError', function (url) {
+c.on('pageError', function (url, text) {
     var status = 'FAIL';
     if (process.stderr.isTTY) status = status.red;
-    console.error(status + ' ' + url);
+    console.error(status + ' ' + url + ' ' + text);
 });
 c.on('end', function (har) {
     var json = JSON.stringify(har, null, 4);
